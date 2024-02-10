@@ -1,0 +1,32 @@
+data_ingestion:
+  raw_data_path: data/raw/ecommerce_customers.csv
+  processed_data_path: data/processed/customers.csv
+
+data_preparation:
+  processed_data_path: data/processed/customers.csv
+  train_path: data/train/train_data.csv
+  test_path: data/test/test_data.csv
+  test_size_pct: 0.2
+  random_seed: 42
+
+data_transformation:
+  train_path: data/train/train_data.csv
+  test_path: data/test/test_data.csv
+  train_array_path: data/train/train_array.npy
+  test_array_path: data/test/test_array.npy
+  preprocessor_path: models/preprocessors/preprocessor.pkl
+
+model_trainer:
+  train_array_path: data/train/train_array.npy
+  model_path: models/trained/lr_model.pkl
+
+model_evaluation:
+  train_array_path: data/train/train_array.npy
+  test_array_path: data/test/test_array.npy
+  model_path: models/trained/lr_model.pkl
+  scores_dir: models/scores/
+  predictions_dir: models/predictions/
+
+model_prediction:
+  preprocessor_path: models/preprocessors/preprocessor.pkl
+  model_path: models/trained/lr_model.pkl

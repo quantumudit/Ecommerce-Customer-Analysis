@@ -1,0 +1,24 @@
+raw_data_columns:
+  Email: email
+  Address: address
+  Avatar: avatar
+  Avg. Session Length: avg_session_length
+  Time on App: time_on_app
+  Time on Website: time_on_website
+  Length of Membership: membership_length
+  Yearly Amount Spent: annual_amount_spent
+
+processed_data_columns:
+  features:
+    avg_session_length: float64
+    time_on_app: float64
+    time_on_website: float64
+    membership_length: float64
+
+  target:
+    annual_amount_spent: float64
+
+  ignore:
+    email: object
+    address: object
+    avatar: object
