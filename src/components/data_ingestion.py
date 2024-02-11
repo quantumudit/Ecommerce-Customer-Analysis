@@ -2,17 +2,14 @@
 This module is used for data ingestion and preprocessing. It reads raw data from a
 specified path, preprocesses it, and saves the processed data to a specified path.
 """
-from os.path import dirname
-from os.path import normpath
+from os.path import dirname, normpath
 
 import pandas as pd
 
-from src.constants import CONFIGS
-from src.constants import SCHEMA
+from src.constants import CONFIGS, SCHEMA
 from src.exception import CustomException
 from src.logger import logger
-from src.utils.basic_utils import create_directories
-from src.utils.basic_utils import read_yaml
+from src.utils.basic_utils import create_directories, read_yaml
 
 
 class DataIngestion:
