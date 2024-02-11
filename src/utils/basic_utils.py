@@ -5,7 +5,7 @@ and writing to CSV files. The functions are designed to handle exceptions and
 log relevant information for debugging purposes.
 """
 
-from csv import DictReader, DictWriter
+import pickle
 from os import makedirs
 from os.path import normpath
 
@@ -61,71 +61,22 @@ def create_directories(dir_paths: list, verbose=True) -> None:
             logger.info("created directory at: %s", path)
 
 
-def write_to_csv(csv_filepath: str, data: dict, verbose: bool = False) -> None:
+def save_as_pickle(file_path: str, model) -> None:
     """
-    This function writes a dictionary to a CSV file. If the file
-    does not exist, it will be created.
+    Save an object to a pickle file.
 
     Args:
-        csv_filepath (str): The path to the CSV file to which the data
-            should be written.
-        data (dict): The data to be written to the CSV file. The keys of the
-            dictionary are used as field names.
-        verbose (bool, optional): If True, the function will log the data
-            that was written to the CSV file. Defaults to False.
+        file_path (str): The file path where the pickle file will be saved.
+        object (pickle): The object to be saved.
 
     Raises:
-        CustomException: If there is an error while writing to the CSV file,
-        a CustomException will be raised with the original exception
-        as its argument.
+        CustomException: An exception occurred while saving the object.
     """
     try:
-        csv_path = normpath(csv_filepath)
-
-        # Write to the file (This will create the CSV file if not exists)
-        with open(csv_path, "a", newline="", encoding="utf-8") as cf:
-            writer = DictWriter(cf, fieldnames=data.keys())
-
-            # Write the headers (only for the first time)
-            if cf.tell() == 0:
-                writer.writeheader()
-                logger.info("CSV file: %s created successfully", csv_path)
-
-            # Write the new data rows
-            writer.writerow(data)
-
-            if verbose:
-                logger.info("1 row added: %s", data)
-    except Exception as e:
-        logger.error(CustomException(e))
-        raise CustomException(e) from e
-
-
-def read_csv(csv_filepath: str, delimiter: str = ",") -> list:
-    """
-    This function reads a CSV file and returns its content as a list of
-    dictionaries. Each dictionary represents a row in the CSV file with
-    keys as column names and values as row values.
-
-    Args:
-        csv_filepath (str): The path to the CSV file to be read.
-        delimiter (str, optional): The character used to separate values
-        in the CSV file. Defaults to ",".
-
-    Raises:
-        CustomException: If there is an error in opening or reading the
-        CSV file, a CustomException is raised with the original exception
-        as its argument.
-
-    Returns:
-        list: A list of dictionaries representing the content of the CSV file.
-    """
-    try:
-        csv_path = normpath(csv_filepath)
-        with open(csv_path, encoding="utf-8") as cf:
-            reader = DictReader(cf, delimiter=delimiter)
-            logger.info("CSV file: %s loaded successfully", csv_path)
-            return list(reader)
+        save_path = normpath(file_path)
+        with open(save_path, "wb") as pf:
+            pickle.dump(model, pf)
+            logger.info("pickle file: %s saved successfully", save_path)
     except Exception as e:
         logger.error(CustomException(e))
         raise CustomException(e) from e
