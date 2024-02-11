@@ -5,9 +5,11 @@ and writing to CSV files. The functions are designed to handle exceptions and
 log relevant information for debugging purposes.
 """
 
+import json
 import pickle
 from os import makedirs
-from os.path import normpath
+from os.path import dirname, normpath
+from typing import Any
 
 import yaml
 from box import Box
@@ -77,6 +79,52 @@ def save_as_pickle(file_path: str, model) -> None:
         with open(save_path, "wb") as pf:
             pickle.dump(model, pf)
             logger.info("pickle file: %s saved successfully", save_path)
+    except Exception as e:
+        logger.error(CustomException(e))
+        raise CustomException(e) from e
+
+
+def load_pickle(file_path: str) -> Any:
+    """
+    Loads a pickle file.
+
+    Args:
+        file_path (str): The file path of the pickle file.
+
+    Returns:
+        Any: The object loaded from the pickle file.
+    """
+    try:
+        pickle_path = normpath(file_path)
+        with open(pickle_path, "rb") as pf:
+            loaded_object = pickle.load(pf)
+            logger.info("pickle file: %s loaded successfully", pickle_path)
+            return loaded_object
+    except Exception as e:
+        logger.error(CustomException(e))
+        raise CustomException(e) from e
+
+
+def save_as_json(file_path: str, data: dict) -> None:
+    """
+    This function saves a dictionary as a JSON file at the specified file path.
+
+    Args:
+        file_path (str): The path where the JSON file will be saved. If the directories
+        in the path do not exist, they will be created.
+        data (dict): The dictionary that will be saved as a JSON file.
+
+    Raises:
+        CustomException: If there is an error during the file writing process,
+        a CustomException will be raised with the original exception as its argument.
+    """
+    save_path = normpath(file_path)
+    makedirs(dirname(save_path), exist_ok=True)
+    try:
+        with open(save_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
+
+        logger.info("json file saved at: %s", save_path)
     except Exception as e:
         logger.error(CustomException(e))
         raise CustomException(e) from e
