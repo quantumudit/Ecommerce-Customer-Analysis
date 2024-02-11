@@ -1,17 +1,16 @@
 """
 This script generates a standard data science project template
 """
+
 import logging
 import os
 
 logging.basicConfig(level=logging.INFO)
 
 list_of_files = [
-    "conf/configs.yaml",
-    "data/external/.gitkeep",
-    "data/raw/.gitkeep",
-    "data/processed/.gitkeep",
-    "notebooks/.gitkeep",
+    ".streamlit/config.toml" "conf/configs.yaml",
+    "conf/schema.yaml" "data/.gitkeep",
+    "models/.gitkeep" "notebooks/.gitkeep",
     "reports/.gitkeep",
     "src/__init__.py",
     "src/constants.py",
@@ -22,9 +21,12 @@ list_of_files = [
     "src/utils/basic_utils.py",
     ".env",
     "main.py",
+    "app.py",
     "requirements.txt",
     "setup.py",
     "README.md",
+    ".gitignore",
+    "LICENSE",
 ]
 
 # Iterate over file and create them
@@ -35,8 +37,7 @@ for file_path in list_of_files:
     # Create directory if not exist
     if file_dir != "":
         os.makedirs(file_dir, exist_ok=True)
-        logging.info("Creating directory: %s for the file %s",
-                     file_dir, file_name)
+        logging.info("Creating directory: %s for the file %s", file_dir, file_name)
 
     # Create file if not exists or if the file is empty
     if (not os.path.exists(file_path)) or (os.path.getsize(file_path) == 0):

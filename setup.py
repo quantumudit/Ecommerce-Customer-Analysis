@@ -4,18 +4,19 @@ the package metadata such as name, version, author details, description, and
 project URLs. It also includes a function to read and filter the requirements
 from a file. The setup function from setuptools is used to package the code.
 """
-from setuptools import find_packages
-from setuptools import setup
+
+from setuptools import find_packages, setup
 
 IGNORE_ITEMS = ["-e .", "-i https://pypi.org/simple", ""]
 
 __VERSION__ = "0.0.0"
-REPO_NAME = "Customer-Analysis"
+REPO_NAME = "Ecommerce Customer Analysis"
 SRC_REPO = "src"
 AUTHOR_NAME = "Udit Kumar Chatterjee"
 AUTHOR_EMAIL = "quantumudit@gmail.com"
 AUTHOR_GH_USERNAME = "quantumudit"
-SHORT_DESCRIPTION = "A small python package for customer analysis"
+SHORT_DESCRIPTION = "A python package for analyzing spending patterns of the \
+    ecommerce customers"
 GH_URL = "https://github.com/"
 
 with open("README.md", encoding="utf-8") as readme:
@@ -49,10 +50,8 @@ setup(
     long_description=LONG_DESCRIPTION,
     long_description_content="text/markdown",
     url=f"{GH_URL}/{AUTHOR_GH_USERNAME}/{REPO_NAME}",
-    project_urls={
-        "Bug Tracker": f"{GH_URL}/{AUTHOR_GH_USERNAME}/{REPO_NAME}/issues"
-    },
+    project_urls={"Bug Tracker": f"{GH_URL}/{AUTHOR_GH_USERNAME}/{REPO_NAME}/issues"},
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_requires=get_requirements("./requirements.txt")
+    install_requires=get_requirements("./requirements.txt"),
 )
