@@ -2,7 +2,12 @@
 """
 
 import numpy as np
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import (
+    explained_variance_score,
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score,
+)
 
 
 def regression_metrics(
@@ -25,6 +30,7 @@ def regression_metrics(
             - MAPE (float): Mean Absolute Percentage Error
             - R2-Score (float): Coefficient of determination
             - Adjusted R2-Score (float): Accounts for the number of predictors
+            - Explained Variance Score (float): Explains the variance
     """
 
     # get MAE, MSE and R2 values
@@ -50,6 +56,9 @@ def regression_metrics(
     # calculate adjusted-R2
     adj_r2 = 1 - ((1 - r2) * (n - 1) / (n - p - 1))
 
+    # Explained variance score
+    expl_var_score = explained_variance_score(y_true, y_pred)
+
     regression_metrics_dict = {
         "MAE": round(mae, 2),
         "MSE": round(mse, 2),
@@ -58,6 +67,7 @@ def regression_metrics(
         "MAPE": round(mape, 2),
         "R2-Score": round(r2, 2),
         "Adjusted R2-Score": round(adj_r2, 2),
+        "Explained Variance Score": round(expl_var_score, 2),
     }
 
     return regression_metrics_dict

@@ -24,7 +24,7 @@ model_evaluation:
   train_array_path: data/train/train_array.npy
   test_array_path: data/test/test_array.npy
   model_path: models/trained/lr_model.pkl
-  scores_dir: models/scores/model_scores.json
+  scores_path: models/scores/lr_model_scores.json
   predictions_dir: models/predictions/
 
 model_prediction:

@@ -1,0 +1,32 @@
+{
+    "model_name": "Linear Model",
+    "training_evaluation_metrics": {
+        "MAE": 7.73,
+        "MSE": 95.82,
+        "RMSE": 9.79,
+        "MPE": -0.04,
+        "MAPE": 1.58,
+        "R2-Score": 0.99,
+        "Adjusted R2-Score": 0.99,
+        "Explained Variance Score": 0.99
+    },
+    "test_evaluation_metrics": {
+        "MAE": 8.56,
+        "MSE": 109.86,
+        "RMSE": 10.48,
+        "MPE": -0.16,
+        "MAPE": 1.79,
+        "R2-Score": 0.98,
+        "Adjusted R2-Score": 0.98,
+        "Explained Variance Score": 0.98
+    },
+    "model_inf": {
+        "coefficients": [
+            25.250381306698916,
+            38.703501387633395,
+            0.3154692627668956,
+            63.543211072252404
+        ],
+        "intercept": 501.992151212453
+    }
+}
