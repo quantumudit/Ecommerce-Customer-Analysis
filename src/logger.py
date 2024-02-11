@@ -8,6 +8,7 @@ log level, module name, line number, and log message.
 The logs are saved to both the log file and printed to the console.
 The logger object can be used to log messages throughout the project.
 """
+
 import logging
 import os
 import sys
@@ -25,7 +26,7 @@ logs_filename = f"{timestamp_fmt}.log"
 LOG_FILE_PATH = os.path.join(logs_dir_path, logs_filename)
 
 # Create logging string
-LOGGING_STR = "[%(asctime)s]:%(name)s %(levelname)s:%(module)s%(lineno)d - %(message)s"
+LOGGING_STR = "[%(asctime)s]:%(name)s %(levelname)s:%(module)s %(lineno)d - %(message)s"
 
 # Creates logging configuration
 logging.basicConfig(
