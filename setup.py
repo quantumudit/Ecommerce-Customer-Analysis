@@ -10,13 +10,13 @@ from setuptools import find_packages, setup
 IGNORE_ITEMS = ["-e .", "-i https://pypi.org/simple", ""]
 
 __VERSION__ = "0.0.0"
-REPO_NAME = "Ecommerce Customer Analysis"
+REPO_NAME = "Spend-Estimator"
 SRC_REPO = "src"
 AUTHOR_NAME = "Udit Kumar Chatterjee"
 AUTHOR_EMAIL = "quantumudit@gmail.com"
 AUTHOR_GH_USERNAME = "quantumudit"
-SHORT_DESCRIPTION = "A python package for analyzing spending patterns of the \
-    ecommerce customers"
+SHORT_DESCRIPTION = "A python package for estimating the annual spend amount of a\
+    customer when certain features are provided"
 GH_URL = "https://github.com/"
 
 with open("README.md", encoding="utf-8") as readme:

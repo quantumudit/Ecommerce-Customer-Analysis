@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "ecommerce-customer-analysis"
+name = "spend-estimator"
 version = "0.1.0"
-description = "The project is about analyzing the ecommerce customers spendings"
+description = "The project is about estimating the annual spend amount of a customer when certain features are provided"
 authors = ["Udit Kumar Chatterjee <quantumudit@gmail.com>"]
 license = "NC-SA"
 readme = "README.md"
