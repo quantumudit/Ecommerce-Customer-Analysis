@@ -34,7 +34,7 @@ Here is the snapshot of the web application interface:
 
 <p align='center'>
   <a href="">
-    <img src="./resources/readme_images/app_interface.png" alt="website-snippet" style="0">
+    <img src="./resources/readme_images/app_interface.png" alt="app-snippet" style="0">
   </a>
 </p>
 
@@ -219,7 +219,7 @@ Discover and engage with my content on these platforms:
 
 [![Linktree Badge][linktreebadge]][linktree] [![Youtube Badge][youtubebadge]][youtube] [![GitHub Badge][githubbadge]][github] [![Medium Badge][mediumbadge]][medium]  [![Substack Badge][substackbadge]][substack] 
 
-To express your support for my work, consider [buying me a coffee][buy_me_a_coffee] or, [donate through Paypal][paypal]
+To express your support for my work, consider [buying me a coffee][buymeacoffee] or, [donate through Paypal][paypal]
 
 [![Buy Me a Coffee][buymeacoffeebadge]][buymeacoffee] [![Paypal][paypalbadge]][paypal]
 
