@@ -22,7 +22,7 @@ st.set_page_config(
 st.title("Customer Annual Spend Estimator")
 
 # Define paths for images
-main_image = Image.open(normpath("./resources/spend-image.jpg"))
+main_image = Image.open(normpath("./resources/app-cover-image.png"))
 
 # Create two columns for layout
 col1, col2 = st.columns([0.45, 0.55], gap="medium")
@@ -70,6 +70,6 @@ with col2:
             model_pred = ModelPrediction()
             est_annual_spend = round(model_pred.predict(user_df)[0], 2)
             st.write(
-                f"With the given input features, the wine quality score predicted"
-                f" by the model is: **:green[${est_annual_spend:0.2f}]**"
+                f"With the given input features, the annual spent of the customer"
+                f" as estimated by the model is: **:green[${est_annual_spend:0.2f}]**"
             )
