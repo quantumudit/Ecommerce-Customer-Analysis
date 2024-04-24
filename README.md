@@ -234,7 +234,7 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 ---
 <p align='center'>
   <a href="https://topmate.io/quantumudit">
-    <img src="https://i.ibb.co/wJ6qN4z/topmate-featured.png" alt="topmate-udit" style="0">
+    <img src="https://github.com/quantumudit/Spend-Estimator/assets/54057814/8e5485b9-4777-487b-9677-9d531cef0169" alt="topmate-udit" style="0">
   </a>
 </p>
 
