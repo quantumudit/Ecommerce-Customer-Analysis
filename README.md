@@ -112,7 +112,7 @@ To help you navigate through the project, here’s a concise guide to the reposi
 - **`📁logs`** - Contains auto-generated logs for event and error tracking, not included in Git.
 - **`📁reports`** - Generated analysis reports and insights.
 - **`📁resources`** - Additional resources like images or documents used in the project
-- **`🐍main.py`** - This is the primary script that orchestrates the project's workflow. It executes the project's pipeline scripts in sequence
+- **`🐍main.py`** - Script to orchestrates the project's workflow. It sequentially executes the pipeline scripts
 - **`🐍app.py`** - The Streamlit web application entry point.
 - **`🐍template.py`** - Template script for standardizing code structure.
 - **`🔒poetry.lock`** - Lock file for Poetry to ensure reproducible builds.
