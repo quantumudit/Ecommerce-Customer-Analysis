@@ -10,8 +10,8 @@ from src.exception import CustomException
 from src.logger import logger
 from src.pipelines.stage_01_data_preparation import DataPrepPipeline
 from src.pipelines.stage_02_data_splitting import DataSplitterPipeline
-from src.pipelines.stage_03_data_transformation import DataTransformPipeline
-from src.pipelines.stage_04_model_trainer import ModelTrainerPipeline
+from src.pipelines.stage_03_data_preprocessing import DataPreprocessorPipeline
+from src.pipelines.stage_04_model_training import ModelTrainerPipeline
 from src.pipelines.stage_05_model_evaluation import ModelEvaluationPipeline
 
 STAGE_NAME = "Data Preparation Stage"
@@ -38,11 +38,11 @@ except Exception as e:
     raise CustomException(e) from e
 
 
-STAGE_NAME = "Data Transformation Stage"
+STAGE_NAME = "Data Preprocessing Stage"
 
 try:
     logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
-    obj = DataTransformPipeline()
+    obj = DataPreprocessorPipeline()
     obj.main()
     logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
 except Exception as e:

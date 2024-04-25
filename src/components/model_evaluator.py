@@ -18,13 +18,13 @@ from src.utils.basic_utils import (
 from src.utils.model_utils import regression_metrics
 
 
-class ModelEvaluation:
+class ModelEvaluator:
     """_summary_"""
 
     def __init__(self):
         """_summary_"""
         # Read the configuration files
-        self.configs = read_yaml(CONFIGS).model_evaluation
+        self.configs = read_yaml(CONFIGS).model_evaluator
 
         # Input file path
         self.train_array_path = normpath(self.configs.train_array_path)

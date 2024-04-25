@@ -9,7 +9,7 @@ data_splitter:
   test_size_pct: 0.2
   random_seed: 42
 
-data_transformation:
+data_preprocessor:
   train_path: data/train/train_data.csv
   test_path: data/test/test_data.csv
   train_array_path: data/train/train_array.npy
@@ -20,7 +20,7 @@ model_trainer:
   train_array_path: data/train/train_array.npy
   model_path: models/trained/lr_model.pkl
 
-model_evaluation:
+model_evaluator:
   train_array_path: data/train/train_array.npy
   test_array_path: data/test/test_array.npy
   model_path: models/trained/lr_model.pkl

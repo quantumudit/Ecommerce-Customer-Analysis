@@ -1,12 +1,12 @@
 """WIP
 """
 
-from src.components.data_transformation import DataTransformation
+from src.components.data_preprocessor import DataPreprocessor
 from src.exception import CustomException
 from src.logger import logger
 
 
-class DataTransformPipeline:
+class DataPreprocessorPipeline:
     """_summary_"""
 
     def __init__(self):
@@ -20,7 +20,7 @@ class DataTransformPipeline:
         """
         try:
             logger.info("Data Transformation started")
-            data_transform = DataTransformation()
+            data_transform = DataPreprocessor()
             data_transform.transform_train_test_data()
             logger.info("Data transformation completed successfully")
         except Exception as excp:
@@ -29,11 +29,11 @@ class DataTransformPipeline:
 
 
 if __name__ == "__main__":
-    STAGE_NAME = "Data Transformation Stage"
+    STAGE_NAME = "Data Preprocessing Stage"
 
     try:
         logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
-        obj = DataTransformPipeline()
+        obj = DataPreprocessorPipeline()
         obj.main()
         logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
     except Exception as e:

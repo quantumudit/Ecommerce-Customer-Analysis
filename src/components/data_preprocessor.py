@@ -22,7 +22,7 @@ from src.logger import logger
 from src.utils.basic_utils import create_directories, read_yaml, save_as_pickle
 
 
-class DataTransformation:
+class DataPreprocessor:
     """
     This class is responsible for transforming raw data into a format suitable for
     machine learning models. It reads configuration and schema files, constructs a
@@ -34,7 +34,7 @@ class DataTransformation:
 
     def __init__(self):
         # Read the configuration files
-        self.configs = read_yaml(CONFIGS).data_transformation
+        self.configs = read_yaml(CONFIGS).data_preprocessor
         self.schema = read_yaml(SCHEMA).processed_data_columns
 
         # Feature and target column names with datatype

@@ -1,7 +1,7 @@
 """WIP
 """
 
-from src.components.model_evaluation import ModelEvaluation
+from src.components.model_evaluator import ModelEvaluator
 from src.exception import CustomException
 from src.logger import logger
 
@@ -20,7 +20,7 @@ class ModelEvaluationPipeline:
         """
         try:
             logger.info("Model Evaluation started")
-            model_eval = ModelEvaluation()
+            model_eval = ModelEvaluator()
             model_eval.save_evaluation_results()
             logger.info("Model evaluation completed successfully")
         except Exception as excp:
