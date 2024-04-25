@@ -4,12 +4,13 @@ data.
 It uses the DataIngestion class from the data_ingestion module and the CustomException
 class from the exception module.
 """
-from src.components.data_ingestion import DataIngestion
+
+from src.components.data_prep import DataPrep
 from src.exception import CustomException
 from src.logger import logger
 
 
-class DataIngestionPipeline:
+class DataPrepPipeline:
     """
     This class is used to create a data ingestion pipeline.
     It has a main method which starts the data ingestion process, saves the processed
@@ -30,7 +31,7 @@ class DataIngestionPipeline:
         """
         try:
             logger.info("Data ingestion started")
-            data_ingestion = DataIngestion()
+            data_ingestion = DataPrep()
             data_ingestion.save_processed_data()
             logger.info("Data ingestion completed successfully")
         except Exception as excp:
@@ -39,11 +40,11 @@ class DataIngestionPipeline:
 
 
 if __name__ == "__main__":
-    STAGE_NAME = "Data Ingestion Stage"
+    STAGE_NAME = "Data Preparation Stage"
 
     try:
         logger.info(">>>>>> %s started <<<<<<", STAGE_NAME)
-        obj = DataIngestionPipeline()
+        obj = DataPrepPipeline()
         obj.main()
         logger.info(">>>>>> %s completed <<<<<<\n\nx==========x", STAGE_NAME)
     except Exception as e:

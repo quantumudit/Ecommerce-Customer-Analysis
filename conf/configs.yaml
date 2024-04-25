@@ -1,4 +1,4 @@
-data_ingestion:
+data_prep:
   raw_data_path: data/raw/ecommerce_customers.csv
   processed_data_path: data/processed/customers.csv
 

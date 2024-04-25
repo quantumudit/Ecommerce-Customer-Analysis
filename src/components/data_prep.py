@@ -12,7 +12,7 @@ from src.logger import logger
 from src.utils.basic_utils import create_directories, read_yaml
 
 
-class DataIngestion:
+class DataPrep:
     """
     This class is responsible for data ingestion and preprocessing. It reads
     configuration and schema from yaml files, reads raw data from a specified path,
@@ -21,7 +21,7 @@ class DataIngestion:
 
     def __init__(self):
         # Read config files
-        self.configs = read_yaml(CONFIGS).data_ingestion
+        self.configs = read_yaml(CONFIGS).data_prep
         self.schema = read_yaml(SCHEMA).raw_data_columns
 
         # Input paths
