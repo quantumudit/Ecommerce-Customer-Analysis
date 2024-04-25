@@ -14,7 +14,7 @@ from src.logger import logger
 from src.utils.basic_utils import create_directories, read_yaml
 
 
-class DataPreparation:
+class DataSplitter:
     """
     This class is used for preparing the training and testing datasets. It
     reads the configuration files and prepares the datasets accordingly.
@@ -22,7 +22,7 @@ class DataPreparation:
 
     def __init__(self):
         # Read the configuration files
-        self.configs = read_yaml(CONFIGS).data_preparation
+        self.configs = read_yaml(CONFIGS).data_splitter
 
         # Define input filepath parameters
         self.processed_filepath = normpath(self.configs.processed_data_path)

@@ -2,7 +2,7 @@ data_prep:
   raw_data_path: data/raw/ecommerce_customers.csv
   processed_data_path: data/processed/customers.csv
 
-data_preparation:
+data_splitter:
   processed_data_path: data/processed/customers.csv
   train_path: data/train/train_data.csv
   test_path: data/test/test_data.csv
