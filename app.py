@@ -1,4 +1,7 @@
-"""_summary_
+"""
+This module implements a Streamlit web application for estimating the 
+annual spending of a customer based on various input features using
+a machine learning model.
 """
 
 # Import necessary libraries
