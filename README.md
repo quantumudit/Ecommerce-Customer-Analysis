@@ -205,7 +205,7 @@ The following illustration demonstrates the process of providing necessary input
   </a>
 </p>
 
-> Access the web application by clicking here: **[Web App Name][webapp_link]**
+> Access the web application by clicking here: **[Customer Spend Estimator][webapp_link]**
 
 
 
@@ -247,7 +247,7 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 
 <!-- External Links -->
 
-[webapp_link]: https://link_to_webapp.streamlit.app/
+[webapp_link]: https://spend-estimator.streamlit.app/
 [requirements]: ./requirements.txt
 
 <!-- Project Specific Links -->
